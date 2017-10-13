@@ -5,10 +5,14 @@
 		<title>Data Design</title>
 	</head>
 	<body>
-		<h1>Users flock to view, up (or down vote), and share content </h1>
+		<h1>Reddit </h1>
+		<h2>as a user i want to view, post, up (or down )vote, and share content</h2>
 		<p>
-			users of this site are most likely between the ages of 19 and 30
-
+         the users that enjoy visiting this site are most likely between the ages of 19 and 30,
+			<br>
+			and like to read new articles, explore gifs, and view memes. The user is satisfied knowing
+			<br>
+			that they can communicate their feeling on a topic with an up or down vote
 		</p>
 	</body>
 </html>

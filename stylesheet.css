@@ -1,7 +1,7 @@
 body{
-	background-image: url("");
-	background-attachment: fixed;
-	width: auto;
+	background-image: url("chem.jpg");
+	background-attachment: scroll;
 	height: auto;
-	overflow: scroll;
+	width: auto;
+	overflow: auto;
 }

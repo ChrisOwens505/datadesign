@@ -5,14 +5,18 @@
 		<title>Data Design</title>
 	</head>
 	<body>
-		<h1>Reddit </h1>
-		<h2>as a user i want to view, post, up (or down )vote, and share content</h2>
-		<p>
-         the users that enjoy visiting this site are most likely between the ages of 19 and 30,
+		<h1>Riddit Data Design</h1>
+		<h2>User Persona:</h2>
+		<p>users who enjoy using this site enjoy to have a platform where they can
 			<br>
-			and like to read new articles, explore gifs, and view memes. The user is satisfied knowing
+			subcribe to accounts that post a specific theme or topic on their page. they
 			<br>
-			that they can communicate their feeling on a topic with an up or down vote
+			also get to express thier liking or disliking of the post with an up or down vote.
+			<br>
+			they get to share, and create posts of their own, making this site one very much
+			<br>
+			loved by people who love to voice thier opinion
 		</p>
+
 	</body>
 </html>

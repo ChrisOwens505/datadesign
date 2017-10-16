@@ -1,0 +1,7 @@
+body{
+	background-image: url("robot.png");
+	background-attachment: fixed;
+	width: auto;
+	height: auto;
+	overflow: scroll;
+}

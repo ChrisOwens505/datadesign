@@ -13,13 +13,9 @@
 			<li>Occupation: Janitor</li>
 		</ul>
 		<p>My name is Jim, and Jim enjoys using this site because he have a platform where I can
-			<br>
 			subcribe to accounts that post themes or topics that I like on their page. I
-			<br>
 			also get to express my liking or disliking of the post with an up or down vote.
-			<br>
 			I get to share, and create posts of my own, which i really like since i love to
-			<br>
 			tell everyone what im thinking, whether they want me to or not.
 		</p>
 <h2>User Story</h2>

@@ -3,32 +3,36 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Data Design</title>
-		<link type="text/css" rel="stylesheet" href="stylesheet.css">
 	</head>
 	<body>
 		<h1>Reddit Data Design</h1>
 		<h2>User Persona:</h2>
-		<p>Users who enjoy using this site enjoy to have a platform where they can
+		<ul>
+			<li>Name: Jim Bean</li>
+			<li>Age: 22</li>
+			<li>Occupation: Janitor</li>
+		</ul>
+		<p>My name is Jim, and Jim enjoys using this site because he have a platform where I can
 			<br>
-			subcribe to accounts that post a specific theme or topic on their page. They
+			subcribe to accounts that post themes or topics that I like on their page. I
 			<br>
-			also get to express thier liking or disliking of the post with an up or down vote.
+			also get to express my liking or disliking of the post with an up or down vote.
 			<br>
-			They get to share, and create posts of their own, making this site one very much
+			I get to share, and create posts of my own, which i really like since i love to
 			<br>
-			loved by people who love to voice thier opinion
+			tell everyone what im thinking, whether they want me to or not.
 		</p>
 <h2>User Story</h2>
 		<p>"I want to check my city's local reddit page"</p>
 		<h3>Use Case/Interaction Flow</h3>
 		<ul>
-			<li>I click log in and enter my username and password</li>
+			<li>He clicks log in and enter my username and password</li>
 			<li>The site logs me in</li>
-			<li>I click on the "search" bar</li>
+			<li>He clicks on the "search" bar</li>
 			<li>The site allows me to type in what i am looking for</li>
-			<li>I type in "Albuquerque"</li>
+			<li>He types in "Albuquerque"</li>
 			<li>The site shows me posts and accounts related to Albuquerque</li>
-			<li>I click on the account that says Albuquerque</li>
+			<li>He clicks on the account that says Albuquerque</li>
 			<li>The site displays the accounts posts for my enjoyment</li>
 		</ul>
 		<h2>Conceptual Model</h2>
@@ -40,6 +44,13 @@
 			<li>profilePhone</li>
 			<li>profileSalt</li>
 		</ul>
+		<h3>Post</h3>
+		<ul>
+			<li>postid</li>
+			<li>postprofileid</li>
+			<li>postcontent</li>
+			<li>postdate</li>
+		</ul>
 		<h3>comment</h3>
 		<ul>
 			<li>commentId(primary key)</li>
@@ -49,15 +60,9 @@
 		</ul>
 		<h3>Up-vote</h3>
 		<ul>
-			<li>upvoteProfileId(foreign key)</li>
-			<li>upvoteCommentId(foreign key)</li>
-			<li>upvoteDate</li>
-		</ul>
-		<h3>Down-vote</h3>
-		<ul>
-			<li>downvoteProfileId(foreign key)</li>
-			<li>downvoteCommentId(foreign key)</li>
-			<li>downvoteDate</li>
+			<li>voteProfileId(foreign key)</li>
+			<li>voteCommentId(foreign key)</li>
+			<li>voteDate</li>
 		</ul>
 		<h2>Relations</h2>
 		<ul>

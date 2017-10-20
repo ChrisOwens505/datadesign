@@ -10,18 +10,21 @@
 		<ul>
 			<li>Name: Jim Bean</li>
 			<li>Age: 22</li>
-			<li>Occupation: Janitor</li>
+			<li>Occupation: Janitor at a local highschool</li>
 		</ul>
-		<p>Jim enjoys using this site because he have a platform where I can
-			subcribe to accounts that post themes or topics that I like on their page. I
-			also get to express my liking or disliking of the post with an up or down vote.
-			I get to share, and create posts of my own, which i really like since i love to
+		<p>Jim enjoys using this site because he has a platform where he can
+			follow accounts that post themes or topics that he likes. he also gets
+			to express his liking or disliking of the post with an up or down vote.
+			He gets to share, and create posts of his own, which really like since i love to
 			tell everyone what im thinking, whether they want me to or not.
 		</p>
 <h2>User Story</h2>
-		<p>"I want to check my city's local reddit page"</p>
+		<p>"I want to check Albuquerque's local news on Reddit "</p>
 		<h3>Use Case/Interaction Flow</h3>
 		<ul>
+			<li>He opens his web browser</li>
+			<li>The computer displays browser homepage</li>
+
 			<li>He clicks log in and enter my username and password</li>
 			<li>The site logs me in</li>
 			<li>He clicks on the "search" bar</li>
@@ -42,12 +45,12 @@
 		</ul>
 		<h3>Post</h3>
 		<ul>
-			<li>postid</li>
-			<li>postprofileid</li>
-			<li>postcontent</li>
-			<li>postdate</li>
+			<li>postId</li>
+			<li>postProfileId</li>
+			<li>postContent</li>
+			<li>postDate</li>
 		</ul>
-		<h3>comment</h3>
+		<h3>Comment</h3>
 		<ul>
 			<li>commentId(primary key)</li>
 			<li>commentProfileId(foreign key)</li>

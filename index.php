@@ -10,13 +10,13 @@
 		<ul>
 			<li>Name: Jim Bean</li>
 			<li>Age: 22</li>
-			<li>Occupation: Janitor at a local highschool</li>
+			<li>Occupation: Janitor at a local high school</li>
 		</ul>
-		<p>Jim enjoys using this site because he has a platform where he can
-			follow accounts that post themes or topics that he likes. he also gets
-			to express his liking or disliking of the post with an up or down vote.
-			He gets to share, and create posts of his own, which really like since i love to
-			tell everyone what im thinking, whether they want me to or not.
+		<p>Jim enjoys using this site because He has a platform where He can
+			follow accounts that post themes or topics that He likes. he also gets
+			to express His liking or disliking of the post with an up or down vote.
+			He gets to share, and create posts of His own, which He really likes since He loves to
+			tell everyone what He's thinking, whether they want Him to or not.
 		</p>
 <h2>User Story</h2>
 		<p>"I want to check Albuquerque's local news on Reddit "</p>
@@ -24,20 +24,26 @@
 		<ul>
 			<li>He opens his web browser</li>
 			<li>The computer displays browser homepage</li>
-
-			<li>He clicks log in and enter my username and password</li>
-			<li>The site logs me in</li>
+         <li>He types "Reddit.com" in the search bar</li>
+			<li>The browser displays the Reddit home page</li>
+			<li>He clicks log in </li>
+			<li>The site displays the log in window</li>
+			<li>He enters his email and password</li>
+			<li>The site logs him in</li>
 			<li>He clicks on the "search" bar</li>
-			<li>The site allows me to type in what i am looking for</li>
+			<li>The site lets him type in the search bar</li>
 			<li>He types in "Albuquerque"</li>
-			<li>The site shows me posts and accounts related to Albuquerque</li>
-			<li>He clicks on the account that says Albuquerque</li>
-			<li>The site displays the accounts posts for my enjoyment</li>
+			<li>The site shows him posts and accounts related to Albuquerque</li>
+			<li>He clicks on the account that says Albuquerque News</li>
+			<li>The site displays the accounts posts and comments</li>
+			<li>He browses the accounts page and gives his opinion on posts he likes/dislikes</li>
 		</ul>
 		<h2>Conceptual Model</h2>
 		<h3>Profile</h3>
 		<ul>
 			<li>profileId(primary key)</li>
+			<li>profileActivationToken</li>
+			<li>profileHandle</li>
 			<li>profileEmail</li>
 			<li>profileHash</li>
 			<li>profilePhone</li>
@@ -45,8 +51,8 @@
 		</ul>
 		<h3>Post</h3>
 		<ul>
-			<li>postId</li>
-			<li>postProfileId</li>
+			<li>postId(primary key)</li>
+			<li>postProfileId(foreign key)</li>
 			<li>postContent</li>
 			<li>postDate</li>
 		</ul>
@@ -65,12 +71,11 @@
 		</ul>
 		<h2>Relations</h2>
 		<ul>
-			<li>One Profile can post many Posts</li>
+			<li>One Profile can post many Posts (1 to n)</li>
 			<li>One Profile can write many Comments (1 to n)</li>
-			<li>Many Profiles can Vote on many Posts</li>
-			<li>Many Profiles can Vote on many Comments</li>
-			<li>Many Comments can have many Up-Votes</li>
-			<li>Many Comments can have many Down-Votes</li>
+			<li>One Profile can Vote on many Posts (1 to n)</li>
+			<li>Many Profiles can Vote on many Comments (m to n)</li>
+			<li>One Comments can have many Votes (1 to n)</li>
 		</ul>
 	</body>
 </html>

@@ -12,7 +12,7 @@
 			<li>Age: 22</li>
 			<li>Occupation: Janitor</li>
 		</ul>
-		<p>My name is Jim, and Jim enjoys using this site because he have a platform where I can
+		<p>Jim enjoys using this site because he have a platform where I can
 			subcribe to accounts that post themes or topics that I like on their page. I
 			also get to express my liking or disliking of the post with an up or down vote.
 			I get to share, and create posts of my own, which i really like since i love to

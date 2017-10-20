@@ -54,7 +54,7 @@
 			<li>commentContent</li>
 			<li>commentDate</li>
 		</ul>
-		<h3>Up-vote</h3>
+		<h3>Vote</h3>
 		<ul>
 			<li>voteProfileId(foreign key)</li>
 			<li>voteCommentId(foreign key)</li>
@@ -62,9 +62,10 @@
 		</ul>
 		<h2>Relations</h2>
 		<ul>
+			<li>One Profile can post many Posts</li>
 			<li>One Profile can write many Comments (1 to n)</li>
-			<li>Many Profiles can Up-Vote many Comments</li>
-			<li>Many Profiles can Down-Vote many Comments</li>
+			<li>Many Profiles can Vote on many Posts</li>
+			<li>Many Profiles can Vote on many Comments</li>
 			<li>Many Comments can have many Up-Votes</li>
 			<li>Many Comments can have many Down-Votes</li>
 		</ul>

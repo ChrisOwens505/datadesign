@@ -9,14 +9,20 @@
 		<h2>User Persona:</h2>
 		<ul>
 			<li>Name: Jim Bean</li>
-			<li>Age: 22</li>
+			<li>Age:25</li>
+			<li>Location: Albuquerque, New Mexico</li>
+			<li>Hobbies: long walks on the beach, expressing political views</li>
+			<li>Frustrations:to many buttons, complicated vocabulary, slow and bored User Experiences</li>
 			<li>Occupation: Janitor at a local high school</li>
 		</ul>
 		<p>Jim enjoys using this site because He has a platform where He can
 			follow accounts that post themes or topics that He likes. he also gets
 			to express His liking or disliking of the post with an up or down vote.
 			He gets to share, and create posts of His own, which He really likes since He loves to
-			tell everyone what He's thinking, whether they want Him to or not.
+			tell everyone what He's thinking, whether they want Him to or not. He enjoys to post
+			things that make other people, happy, sad, or really pissed off. He loves to find forums
+			that are based off topics he does not agree with, and fight with the users who do agree
+			with the forum.
 		</p>
 <h2>User Story</h2>
 		<p>"I want to check Albuquerque's local news on Reddit "</p>

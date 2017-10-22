@@ -57,10 +57,11 @@ CREATE TABLE comment(
 	commentid BINARY(16) NOT NULL,
 	commentprofileid BINARY(16) NOT NULL,
 	commentpostid BINARY(16)
-	commentdateDATETIME(6) NOT NULL,
 --
 	     INDEX(commentid)
 --
-	     FOREIGN KEY(commentprofileid) REFERENCES profile(profileid),
-
+	     FOREIGN KEY(commentpostid) REFERENCES post(postid)
+	     FOREIGN KEY(commentprofileid) REFERENCES profile(profileid)
+--
+	     PRIMARY KEY(commentid)
 );

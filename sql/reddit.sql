@@ -5,13 +5,14 @@
 CREATE TABLE profile(
 	profileid BINARY(16) NOT NULL,
 	profileactivationtoken CHAR (32),
+	profileusername CHAR(128) NOT NULL,
 	profilehandle VARCHAR (32) NOT NULL,
 	profileemail VARCHAR(128),
 	profilehash CHAR(128) NOT NULL,
 	profilephone VARCHAR(32),
 	profilesalt CHAR(64) NOT NULL,
 	UNIQUE(profileemail),
-	UNIQUE(profilephone),
+	UNIQUE(profileusername),
 	PRIMARY Key(profileid)
 );
 --
@@ -49,4 +50,8 @@ CREATE TABLE comments(
 	FOREIGN KEY(commentspostid) REFERENCES post(postid),
 	FOREIGN KEY (commentsCommentsid) REFERENCES comments(commentsid),
 	PRIMARY KEY(commentsid)
+);
+
+INSERT INTO profile(profileId, profileActivationToken, profileUserName, profileEmail, profileHash, profileSalt)
+VALUES(UNHEX(REPLACE(
 );

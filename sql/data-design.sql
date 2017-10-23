@@ -52,16 +52,21 @@ CREATE TABLE vote(
 --
 	     PRIMARY KEY(voteprofileid, votepostid)
 );
-CREATE TABLE comment(
+CREATE TABLE comments(
 --
-	commentid BINARY(16) NOT NULL,
-	commentprofileid BINARY(16) NOT NULL,
-	commentpostid BINARY(16)
+	     commentsid BINARY(16) NOT NULL,
+	     commentsprofileid BINARY(16) NOT NULL,
+	     commentspostid BINARY(16),
+	     commentsCommentsid BINARY(16),
+	     commentscontent VARCHAR(2000)NOT NULL,
+	     commentsdate DATETIME(6) NOT NULL,
 --
-	     INDEX(commentid)
+	     INDEX(commentsprofileid),
+	     INDEX(commentspostid),
 --
-	     FOREIGN KEY(commentpostid) REFERENCES post(postid)
-	     FOREIGN KEY(commentprofileid) REFERENCES profile(profileid)
+		  FOREIGN KEY(commentsprofileid) REFERENCES profile(profileid),
+	     FOREIGN KEY(commentspostid) REFERENCES post(postid),
+	     FOREIGN KEY (commentsCommentsid) REFERENCES comments(commentsid),
 --
-	     PRIMARY KEY(commentid)
+	     PRIMARY KEY(commentsid)
 );

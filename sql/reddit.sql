@@ -52,6 +52,12 @@ CREATE TABLE comments(
 	PRIMARY KEY(commentsid)
 );
 
-INSERT INTO profile(profileId, profileActivationToken, profileUserName, profileEmail, profileHash, profileSalt)
-VALUES(UNHEX(REPLACE(
+INSERT INTO profile(profileId, profileActivationToken, profileUserName, profileEmail, profileHash, profileSalt),
+VALUES(UNHEX(REPLACE('fe5e8c9e-e9ef-4f36-b61c-a51de9cdc0f1','-'')), 'hdteg5g45ewj4fr5et3g4652we432w679', 'MacO', 'Maco@gmail.com',
+	               'jdhjfjghrg5hj6ktyf6e8e944oj6htyryyey4h5g6g6yt7r7e994i4u54i85t7y485y7t8475yt46e5tg4765tgwo38w3airueth5u5uth47ytty75',
+                  'bro83rfgho38475tf37wo4f3e4gr67t2gr4637fg3476f34gg7676tg'
+):
+
+INSERT INTO post(postId, postProfileId, postContent, postDate)
+	VALUES (UNHEX(REPLACE('10d35f80-4cec-4a39-b3be-7dd68f4026af'
 );

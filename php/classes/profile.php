@@ -14,7 +14,7 @@ require_once(dirname(__DIR__, 2) . "../vendor/autoload.php");
 
 use Ramsey\Uuid\Uuid;
 
-class Profile implements \abstract {;
+class Profile implements \JsonSerializable {
 	use ValidateUuid;
 	use ValidateDate;
 	/**
@@ -62,3 +62,17 @@ class Profile implements \abstract {;
 	 * @throws \Exception if some other exception occurs
 	 * @Documentation https://php.net/manual/en/language.oop5.decon.php
 	 **/
+	public function __construct($newProfileId, string $newProfileUserName, ?string $newProfileActivationToken, string $newProfileEmail, string $newProfileHash, string $newProfileSalt) {
+		try {
+			$this->setProfileId($newProfileId);
+			$this->setProfileUserName($newProfileUserName);
+			$this->setProfileActivationToken($newProfileActivationToken);
+			$this->setProfileEmail($newProfileEmail);
+			$this->setProfileHash($newProfileHash);
+			$this->setProfileSalt($newProfileSalt);
+		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			//determine what exception type was thrown
+			$exceptionType = get_class($exception);
+			throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		}
+	}

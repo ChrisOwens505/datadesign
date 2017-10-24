@@ -24,6 +24,11 @@
 			that are based off topics he does not agree with, and fight with the users who do agree
 			with the forum.
 		</p>
+		<p>
+			Jim frequently uses an iphone to check his feed on the toilet, but her prefers to check his feed on his
+			windows powered dell laptop. even though he is young, his eye sight is not the best, so  laptop suites his needs.
+
+		</p>
 <h2>User Story</h2>
 		<p>"I want to check Albuquerque's local news on Reddit "</p>
 		<h3>Use Case/Interaction Flow</h3>

@@ -12,6 +12,7 @@ CREATE TABLE profile(
 --
 	     profileId BINARY(16) NOT NULL,
 	     profileActivationToken CHAR (32),
+	     profileUsername BINARY(16),
 	     profileHandle VARCHAR (32) NOT NULL,
 --
 	     profileEmail VARCHAR(128),

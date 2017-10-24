@@ -103,67 +103,71 @@ class Profile implements \JsonSerializable {
 		//convert and store the post
 		$this->ProfileId = $uuid;
 	}
-/**
- * accessor method for user name
- *
- * @return string value of user name
- **/
+
+	/**
+	 * accessor method for user name
+	 *
+	 * @return string value of user name
+	 **/
 	public function getProfileUserName(): string {
 		return ($this->profileUserName);
-}
-/**
- * mutator method for user name
- *
- * @param string $newProfileUserName new value of user name
- * @throws \InvalidArgumentException if $newProfileUserName is not a string or insecure
- * @throws \RangeException if $newProfileUserName is > 128 characters
- * @throws \TypeError if $newProfileUserName is not a string
- **/
-	public function setProfileUserName(string $newProfileUserName) : void {
-	// verify the user name is secure
-	$newProfileUserName = trim($newProfileUserName);
-	$newProfileUserName = filter_var($newProfileUserName, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-	if(empty($newProfileUserName) === true) {
-		throw(new \InvalidArgumentException("profile user name is empty or insecure"));
 	}
-	// verify the user name will fit in the database
-	if(strlen($newProfileUserName) > 128) {
-		throw(new \RangeException("profile user name is too large"));
+
+	/**
+	 * mutator method for user name
+	 *
+	 * @param string $newProfileUserName new value of user name
+	 * @throws \InvalidArgumentException if $newProfileUserName is not a string or insecure
+	 * @throws \RangeException if $newProfileUserName is > 128 characters
+	 * @throws \TypeError if $newProfileUserName is not a string
+	 **/
+	public function setProfileUserName(string $newProfileUserName): void {
+		// verify the user name is secure
+		$newProfileUserName = trim($newProfileUserName);
+		$newProfileUserName = filter_var($newProfileUserName, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+		if(empty($newProfileUserName) === true) {
+			throw(new \InvalidArgumentException("profile user name is empty or insecure"));
+		}
+		// verify the user name will fit in the database
+		if(strlen($newProfileUserName) > 128) {
+			throw(new \RangeException("profile user name is too large"));
+		}
+		// store the user name
+		$this->profileUserName = $newProfileUserName;
 	}
-	// store the user name
-	$this->profileUserName = $newProfileUserName;
+
+	/**
+	 * accessor method for account activation token
+	 *
+	 * @return string value of the activation token
+	 **/
+	public function getProfileActivationToken(): ?string {
+		return ($this->profileActivationToken);
 	}
-/**
- * accessor method for account activation token
- *
- * @return string value of the activation token
- **/
-public function getProfileActivationToken() : ?string {
-	return ($this->profileActivationToken);
-}
-/**
- * mutator method for account activation token
- *
- * @param string $newProfileActivationToken
- * @throws \InvalidArgumentException  if the token is not a string or insecure
- * @throws \RangeException if the token is not exactly 32 characters
- * @throws \TypeError if the activation token is not a string
- **/
-public function setProfileActivationToken(?string $newProfileActivationToken): void {
-	if($newProfileActivationToken === null) {
-		$this->profileActivationToken = null;
-		return;
+
+	/**
+	 * mutator method for account activation token
+	 *
+	 * @param string $newProfileActivationToken
+	 * @throws \InvalidArgumentException  if the token is not a string or insecure
+	 * @throws \RangeException if the token is not exactly 32 characters
+	 * @throws \TypeError if the activation token is not a string
+	 **/
+	public function setProfileActivationToken(?string $newProfileActivationToken): void {
+		if($newProfileActivationToken === null) {
+			$this->profileActivationToken = null;
+			return;
+		}
+		$newProfileActivationToken = strtolower(trim($newProfileActivationToken));
+		if(ctype_xdigit($newProfileActivationToken) === false) {
+			throw(new\RangeException("user activation is not valid"));
+		}
+		//make sure user activation token is only 32 characters
+		if(strlen($newProfileActivationToken) !== 32) {
+			throw(new\RangeException("user activation token has to be 32"));
+		}
+		$this->profileActivationToken = $newProfileActivationToken;
 	}
-	$newProfileActivationToken = strtolower(trim($newProfileActivationToken));
-	if(ctype_xdigit($newProfileActivationToken) === false) {
-		throw(new\RangeException("user activation is not valid"));
-	}
-	//make sure user activation token is only 32 characters
-	if(strlen($newProfileActivationToken) !== 32) {
-		throw(new\RangeException("user activation token has to be 32"));
-	}
-	$this->profileActivationToken = $newProfileActivationToken;
-}
 
 	/**
 	 * Specify data which should be serialized to JSON
@@ -173,5 +177,36 @@ public function setProfileActivationToken(?string $newProfileActivationToken): v
 	 * @since 5.4.0
 	 */
 	public function jsonSerialize() {
+	}
+
+	/**
+	 * accessor method for email
+	 * @return string value of email
+	 **/
+	public function getProfileEmail(): string {
+		return $this->profileEmail;
+	}
+
+	/**
+	 * mutator method for email
+	 *
+	 * @param string $newProfileEmail new value of email
+	 * @throws \InvalidArgumentException if $newEmail is not a valid email or insecure
+	 * @throws \RangeException if $newEmail is > 128 characters
+	 * @throws \TypeError if $newEmail is not a string
+	 **/
+	public function setProfileEmail(string $newProfileEmail): void {
+		// verify the email is secure
+		$newProfileEmail = trim($newProfileEmail);
+		$newProfileEmail = filter_var($newProfileEmail, FILTER_VALIDATE_EMAIL);
+		if(empty($newProfileEmail) === true) {
+			throw(new \InvalidArgumentException("profile email is empty or insecure"));
+		}
+		// verify the email will fit in the database
+		if(strlen($newProfileEmail) > 128) {
+			throw(new \RangeException("profile email is too large"));
+		}
+		// store the email
+		$this->profileEmail = $newProfileEmail;
 	}
 }

@@ -74,27 +74,118 @@ class Comments implements \JsonSerializable {
 			throw(new $exceptionType($exception->getMessage(), 0, $exception));
 		}
 	}
-/**
- * accessor method for comments id
- *
- * @return Uuid value of comments id
- **/
-public function getCommentsId(): Uuid {
-	return $this->commentsId;
-}
-/**
- * mutator method for comments id
- *
- * @param Uuid $newCommentsId new value of comments id
- * @throws \UnexpectedValueException if $newCommentsId is not a UUID
- **/
-public function setCommentsId($newCommentsId) : void {
-	try {
-		$uuid = self::validateUuid($newCommentsId);
-	} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception){
-		$exceptionType = get_class($exception);
-		throw(new $exceptionType($exception->getMessage(), 0, $exception));
+
+	/**
+	 * accessor method for comments id
+	 *
+	 * @return Uuid value of comments id
+	 **/
+	public function getCommentsId(): Uuid {
+		return $this->commentsId;
 	}
-	//convert and store the comments id
-	$this->commentsId = $uuid;
+
+	/**
+	 * mutator method for comments id
+	 *
+	 * @param Uuid $newCommentsId new value of comments id
+	 * @throws \UnexpectedValueException if $newCommentsId is not a UUID
+	 **/
+	public function setCommentsId($newCommentsId): void {
+		try {
+			$uuid = self::validateUuid($newCommentsId);
+		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			$exceptionType = get_class($exception);
+			throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		}
+		//convert and store the comments id
+		$this->commentsId = $uuid;
+	}
+
+	/**
+	 * accessor method for comments profile id
+	 *
+	 * @return Uuid value of comments profile id
+	 **/
+	public function getCommentsProfileId() {
+		return $this->commentsProfileId;
+	}
+
+	/**
+	 * mutator method for comments profile id
+	 *
+	 * @param Uuid $newCommentsProfileId new value of comments profile id
+	 * @throws \UnexpectedValueException if $newCommentsProfileId is not a UUID
+	 **/
+	public function setCommentsProfileId($newCommentsProfileId): void {
+		try {
+			$uuid = self::validateUuid($newCommentsProfileId);
+		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			$exceptionType = get_class($exception);
+			throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		}
+		//convert and store the comments profile id
+		$this->commentsProfileId = $uuid;
+	}
+
+	/**
+	 * accessor method for comments post id
+	 *
+	 * @return Uuid value of comments post id
+	 **/
+	public function getCommentsPostId() {
+		return $this->commentsPostId;
+	}
+
+	/**
+	 * mutator method for comments post id
+	 *
+	 * @param Uuid $newCommentsPostId new value of comments post id
+	 * @throws \UnexpectedValueException if $newCommentsPostId is not a UUID
+	 **/
+	public function setCommentsPostId($newCommentsPostId): void {
+		try {
+			$uuid = self::validateUuid($newCommentsPostId);
+		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			$exceptionType = get_class($exception);
+			throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		}
+		//convert and store the comments post id
+		$this->commentsPostId = $uuid;
+	}
+
+	/**
+	 * accessor method for comments comments id
+	 *
+	 * @return Uuid value of comments comments id
+	 **/
+	public function getCommentsCommentsId() {
+		return $this->commentsCommentsId;
+	}
+
+	/**
+	 * mutator method for comments comments id
+	 *
+	 * @param Uuid $newCommentsCommentsId new value of comments comments id
+	 * @throws \UnexpectedValueException if $newCommentsCommentsId is not a UUID
+	 **/
+	public function setCommentsCommentsId($newCommentsCommentsId): void {
+		try {
+			$uuid = self::validateUuid($newCommentsCommentsId);
+		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			$exceptionType = get_class($exception);
+			throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		}
+		//convert and store the comments comments id
+		$this->commentsCommentsId = $uuid;
+	}
+
+	/**
+	 * Specify data which should be serialized to JSON
+	 * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
+	 * @return mixed data which can be serialized by <b>json_encode</b>,
+	 * which is a value of any type other than a resource.
+	 * @since 5.4.0
+	 */
+	public function jsonSerialize() {
+	}
 }

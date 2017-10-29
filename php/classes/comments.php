@@ -74,7 +74,6 @@ class Comments implements \JsonSerializable {
 			throw(new $exceptionType($exception->getMessage(), 0, $exception));
 		}
 	}
-
 	/**
 	 * accessor method for comments id
 	 *

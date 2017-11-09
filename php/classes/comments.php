@@ -153,31 +153,6 @@ class Comments implements \JsonSerializable {
 	}
 
 	/**
-	 * accessor method for comments comments id
-	 *
-	 * @return Uuid value of comments comments id
-	 **/
-	public function getCommentsCommentsId() {
-		return $this->commentsCommentsId;
-	}
-
-	/**
-	 * mutator method for comments comments id
-	 *
-	 * @param Uuid $newCommentsCommentsId new value of comments comments id
-	 * @throws \UnexpectedValueException if $newCommentsCommentsId is not a UUID
-	 **/
-	public function setCommentsCommentsId($newCommentsCommentsId): void {
-		try {
-			$uuid = self::validateUuid($newCommentsCommentsId);
-		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
-			$exceptionType = get_class($exception);
-			throw(new $exceptionType($exception->getMessage(), 0, $exception));
-		}
-		//convert and store the comments comments id
-		$this->commentsCommentsId = $uuid;
-	}
-	/**
 	 * accessor method for comments content
 	 *
 	 * @return string value of comments content
